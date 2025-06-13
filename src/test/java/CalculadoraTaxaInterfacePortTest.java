@@ -7,10 +7,10 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import io.github.lifveras.bradeco_template_dependencia_pic.internal.Categoria;
-import io.github.lifveras.bradeco_template_dependencia_pic.internal.RegistroDeTaxas;
-import io.github.lifveras.bradeco_template_dependencia_pic.internal.model.Item;
-import io.github.lifveras.bradeco_template_dependencia_pic.provided.CalculadoraTaxaInterfacePort;
+import io.github.lifveras.bradeco_calctaxa.internal.Categoria;
+import io.github.lifveras.bradeco_calctaxa.internal.RegistroDeTaxas;
+import io.github.lifveras.bradeco_calctaxa.internal.model.Item;
+import io.github.lifveras.bradeco_calctaxa.provided.CalculadoraTaxaInterfacePort;
 
 public class CalculadoraTaxaInterfacePortTest {
     private CalculadoraTaxaInterfacePort calculadora;

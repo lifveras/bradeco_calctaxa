@@ -1,6 +1,6 @@
-package io.github.lifveras.bradeco_template_dependencia_pic.internal.model;
+package io.github.lifveras.bradeco_calctaxa.internal.model;
 
-import io.github.lifveras.bradeco_template_dependencia_pic.internal.Categoria;
+import io.github.lifveras.bradeco_calctaxa.internal.Categoria;
 
 public class Item {
     private final String nome;

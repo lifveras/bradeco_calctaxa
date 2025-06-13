@@ -1,6 +1,6 @@
-package io.github.lifveras.bradeco_template_dependencia_pic.provided;
+package io.github.lifveras.bradeco_calctaxa.provided;
 
-import io.github.lifveras.bradeco_template_dependencia_pic.internal.RegistroDeTaxas;
+import io.github.lifveras.bradeco_calctaxa.internal.RegistroDeTaxas;
 import io.github.lifveras.bredeco_pic_abstract.provided.ComponentInterface;
 
 // Classe Concreta de Interface

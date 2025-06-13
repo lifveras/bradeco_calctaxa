@@ -1,13 +1,13 @@
-package io.github.lifveras.bradeco_template_dependencia_pic.provided;
+package io.github.lifveras.bradeco_calctaxa.provided;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import io.github.lifveras.bradeco_template_dependencia_pic.internal.CalculadoraTaxa;
-import io.github.lifveras.bradeco_template_dependencia_pic.internal.RegistroDeTaxas;
-import io.github.lifveras.bradeco_template_dependencia_pic.internal.model.Item;
-import io.github.lifveras.bradeco_template_dependencia_pic.provided.interfaces.CalculadoraTaxaInterface;
+import io.github.lifveras.bradeco_calctaxa.internal.CalculadoraTaxa;
+import io.github.lifveras.bradeco_calctaxa.internal.RegistroDeTaxas;
+import io.github.lifveras.bradeco_calctaxa.internal.model.Item;
+import io.github.lifveras.bradeco_calctaxa.provided.interfaces.CalculadoraTaxaInterface;
 import io.github.lifveras.bredeco_pic_abstract.provided.InterfacePort;
 
 // Classe Concreta de Porto de Interface
