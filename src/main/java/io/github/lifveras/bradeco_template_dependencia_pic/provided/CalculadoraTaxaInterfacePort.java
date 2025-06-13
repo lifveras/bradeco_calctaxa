@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.github.lifveras.bradeco_template_dependencia_pic.internal.CalculadoraTaxa;
 import io.github.lifveras.bradeco_template_dependencia_pic.internal.RegistroDeTaxas;
 import io.github.lifveras.bradeco_template_dependencia_pic.internal.model.Item;
 import io.github.lifveras.bradeco_template_dependencia_pic.provided.interfaces.CalculadoraTaxaInterface;
@@ -14,8 +15,8 @@ public class CalculadoraTaxaInterfacePort extends InterfacePort implements Calcu
 
     private RegistroDeTaxas registroDeTaxas; // referência interna
 
-    public CalculadoraTaxaInterfacePort(String string) {
-        // TODO Auto-generated constructor stub
+    public CalculadoraTaxaInterfacePort(String id) {
+        this.id = id;
     }
 
     @Override
@@ -25,15 +26,7 @@ public class CalculadoraTaxaInterfacePort extends InterfacePort implements Calcu
 
     @Override
     public Map<String, Double> calculaTaxas(List<Item> items) {
-        Map<String, Double> taxasCalculadas = new HashMap<>();
-
-        for (Item item : items) {
-            double proporcaoTaxa = registroDeTaxas.getRegra(item.getCategoria());
-            double valorDeTaxa = item.getPreco() * proporcaoTaxa;
-            taxasCalculadas.put(item.getNome(), valorDeTaxa);
-        }
-
-        return taxasCalculadas;
+        return CalculadoraTaxa.calcularTaxas(registroDeTaxas, items);
     }
 
     public void setRegistroDeTaxas(RegistroDeTaxas registroDeTaxas) {
