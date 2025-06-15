@@ -1,7 +1,3 @@
-Claro! Abaixo está um exemplo de README adaptado especificamente para o **componente `CalculaTaxa`**, seguindo o modelo fornecido:
-
----
-
 # Componente `CalculaTaxa` - PIC
 
 Este repositório contém o **componente CalculaTaxa** implementado em Java, baseado no padrão **PIC (Padrão de Interface de Componentes)**. Este componente é responsável por calcular taxas (como impostos) com base na categoria de itens, utilizando uma abordagem **orientada à interface** com separação entre **interfaces providas**, **requeridas** e lógica interna.

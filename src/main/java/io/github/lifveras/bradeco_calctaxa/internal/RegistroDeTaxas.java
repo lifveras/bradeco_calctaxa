@@ -1,4 +1,4 @@
-package io.github.lifveras.bradeco_template_dependencia_pic.internal;
+package io.github.lifveras.bradeco_calctaxa.internal;
 
 import java.util.HashMap;
 import java.util.Map;
