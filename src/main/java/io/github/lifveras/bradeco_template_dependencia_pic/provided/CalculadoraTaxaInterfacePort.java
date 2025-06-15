@@ -14,8 +14,9 @@ public class CalculadoraTaxaInterfacePort extends InterfacePort implements Calcu
 
     private RegistroDeTaxas registroDeTaxas; // referência interna
 
-    public CalculadoraTaxaInterfacePort(String string) {
-        // TODO Auto-generated constructor stub
+    public CalculadoraTaxaInterfacePort(String id) {
+        this.id = id;
+        initialize();
     }
 
     @Override

@@ -8,19 +8,18 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import io.github.lifveras.bradeco_template_dependencia_pic.internal.Categoria;
-import io.github.lifveras.bradeco_template_dependencia_pic.internal.RegistroDeTaxas;
 import io.github.lifveras.bradeco_template_dependencia_pic.internal.model.Item;
+import io.github.lifveras.bradeco_template_dependencia_pic.provided.CalculadoraTaxaConcreteInterface;
 import io.github.lifveras.bradeco_template_dependencia_pic.provided.CalculadoraTaxaInterfacePort;
 
 public class CalculadoraTaxaInterfacePortTest {
-    private CalculadoraTaxaInterfacePort calculadora;
-    private RegistroDeTaxas registroDeTaxas;
+    private CalculadoraTaxaConcreteInterface calculadoraComponente;
+    private CalculadoraTaxaInterfacePort calculadoraComponentePort;
 
     @BeforeEach
     public void setup() {
-        calculadora = new CalculadoraTaxaInterfacePort("dummy");
-        registroDeTaxas = new RegistroDeTaxas();
-        calculadora.setRegistroDeTaxas(registroDeTaxas);
+        calculadoraComponente = new CalculadoraTaxaConcreteInterface();
+        calculadoraComponentePort = ((CalculadoraTaxaInterfacePort) calculadoraComponente.getPort("calcPort"));
     }
 
     @Test
@@ -32,7 +31,7 @@ public class CalculadoraTaxaInterfacePortTest {
         // when(registroDeTaxas.getRegra(Categoria.FOOD)).thenReturn(0.05);
         // when(registroDeTaxas.getRegra(Categoria.CLOTHING)).thenReturn(0.1);
 
-        Map<String, Double> resultado = calculadora.calculaTaxas(itens);
+        Map<String, Double> resultado = calculadoraComponentePort.calculaTaxas(itens);
 
         assertEquals(2, resultado.size());
         assertEquals(0.5, resultado.get("Banana"));
@@ -41,7 +40,7 @@ public class CalculadoraTaxaInterfacePortTest {
 
     @Test
     public void testCalculaTaxasComListaVazia() {
-        Map<String, Double> resultado = calculadora.calculaTaxas(List.of());
+        Map<String, Double> resultado = calculadoraComponentePort.calculaTaxas(List.of());
         assertTrue(resultado.isEmpty());
     }
 
@@ -51,7 +50,7 @@ public class CalculadoraTaxaInterfacePortTest {
 
         // when(registroDeTaxas.getRegra(Categoria.BOOK)).thenReturn(0.0);
 
-        Map<String, Double> resultado = calculadora.calculaTaxas(List.of(item));
+        Map<String, Double> resultado = calculadoraComponentePort.calculaTaxas(List.of(item));
 
         assertEquals(1, resultado.size());
         assertEquals(0.0, resultado.get("Livro"));

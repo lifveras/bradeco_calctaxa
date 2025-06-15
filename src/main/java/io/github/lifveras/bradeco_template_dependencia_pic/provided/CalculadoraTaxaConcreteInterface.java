@@ -6,12 +6,17 @@ import io.github.lifveras.bredeco_pic_abstract.provided.ComponentInterface;
 // Classe Concreta de Interface
 public class CalculadoraTaxaConcreteInterface extends ComponentInterface {
 
-    private RegistroDeTaxas registroDeTaxas; //referência interna
+    private RegistroDeTaxas registroDeTaxas; // referência interna
+
+    public CalculadoraTaxaConcreteInterface() {
+        super();
+        initialize();
+    }
 
     @Override
     public void initialize() {
-        id = "ca";
-        CalculadoraTaxaInterfacePort port = new CalculadoraTaxaInterfacePort("opsPort");
+        id = "calcComponent";
+        CalculadoraTaxaInterfacePort port = new CalculadoraTaxaInterfacePort("calcPort");
         ports.add(port);
 
         // Parte Interna
